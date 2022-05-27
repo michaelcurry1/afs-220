@@ -72,7 +72,9 @@ export default class Metronome extends Component {
       const { playing, bpm } = this.state;
   
       return (
+    <div className="entireImage">
         <div className="metronome">
+            <h1>Mike's Metronone</h1>
           <div className="bpm-slider">
             <div>{bpm} BPM</div>
             <input
@@ -85,7 +87,10 @@ export default class Metronome extends Component {
           <button onClick={this.startStop}>
             {playing ? 'Stop' : 'Start'}
           </button>
-        </div>
+          <h1> This is A Drummers Must For Good Timing </h1>
+          </div>
+          <div className="image"></div>
+    </div>
       );
     }
 }
