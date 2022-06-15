@@ -5,6 +5,9 @@ import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
 import Preferences from '../Preferences/Preferences';
 import useToken from './useToken';
+import Logout from '../Logout/Logout'
+import Navbar from '../Navbar/Navbar'
+
 // function setToken(userToken) {
 //   sessionStorage.setItem('token', JSON.stringify(userToken));
 // }
@@ -18,7 +21,7 @@ import useToken from './useToken';
 export default function App() {
   const { token, setToken } = useToken();
 //   const [token, setToken] = useState();
-
+ 
   if(!token) {
     return <Login setToken={setToken} />
     
@@ -26,8 +29,11 @@ export default function App() {
   else {}
       return (
     <div className="wrapper">
-        <h1>Application</h1>
-      <BrowserRouter>
+ <BrowserRouter>
+      <Navbar/>
+        <h1>Metronome</h1>
+        {token? <Logout setToken={setToken} /> :""}
+     
         <Routes>
           <Route path="/dashboard"element={<Dashboard/>}/>
           
