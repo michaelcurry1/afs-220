@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Metronome.css';
-import click1 from './click1.wav';
-import click2 from './click2.wav';
+import click1 from './media/click1.wav';
+import click2 from './media/click2.wav';
 
 export default class Metronome extends Component {
     constructor(props) {
